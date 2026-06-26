@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapeephat Lanthong — CS Portfolio</title>
+  <meta name="description" content="Personal academic portfolio of Rapeephat Lanthong, Computer Science student at NPRU, seeking a Web Developer internship." />
+  <style>
+
+    :root {
+      --ink:      #3d3d3d;
+      --paper:    #faf9f6;
+      --mid:      #8a8a8a;
+      --rule:     #d4d0c8;
+      --amber:    #c8722a;
+      --amber-lt: #f5e9dc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Georgia', serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      z-index: 50;
+      padding: 0 32px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    nav ul li a {
+      display: block;
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--mid);
+      padding: 14px 18px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: var(--amber);
+      border-bottom-color: var(--amber);
+      outline: none;
+    }
+
+    /* LAYOUT */
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* HEADER */
+    header {
+      padding: 72px 32px 56px;
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--amber-lt);
+      display: block;
+    }
+
+    .header-text h1 {
+      font-size: 2.1rem;
+      font-weight: normal;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #4a4a4a;
+    }
+
+    .header-text h1 em {
+      font-style: normal;
+      color: var(--amber);
+    }
+
+    .header-meta {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 10px;
+    }
+
+    /* SECTIONS */
+    section {
+      border-top: 1px solid var(--rule);
+      padding: 56px 0;
+    }
+
+    section:last-of-type {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+      font-weight: normal;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      color: #555;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin: 28px 0 8px;
+      color: #555;
+    }
+
+    p { margin-bottom: 14px; color: #5a5a5a; }
+    p:last-child { margin-bottom: 0; }
+
+    /* FIGURE */
+    figure { margin-top: 36px; }
+
+    figure img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: var(--amber-lt);
+      outline: 1px solid var(--rule);
+      outline-offset: -1px;
+    }
+
+    figcaption {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.78rem;
+      color: var(--mid);
+      margin-top: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+      margin-top: 8px;
+    }
+
+    caption {
+      text-align: left;
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding-bottom: 12px;
+    }
+
+    thead th {
+      text-align: left;
+      border-bottom: 2px solid #bbb;
+      padding: 8px 12px 10px 0;
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-weight: normal;
+    }
+
+    tbody td {
+      padding: 11px 12px 11px 0;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+      color: #5a5a5a;
+    }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    tbody td:first-child {
+      white-space: nowrap;
+      color: var(--mid);
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.88rem;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 40px;
+      margin-top: 4px;
+    }
+
+    .skills-col-title {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding-bottom: 12px;
+      border-bottom: 2px solid #bbb;
+      margin-bottom: 0;
+    }
+
+    .skills-grid ul,
+    .skills-grid ol {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills-grid li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.95rem;
+      color: #5a5a5a;
+    }
+
+    .skills-grid li::before {
+      content: '—';
+      color: var(--amber);
+      margin-right: 10px;
+      font-family: 'Arial Narrow', Arial, sans-serif;
+    }
+
+    /* PROJECTS */
+    article {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    article:first-of-type { padding-top: 8px; }
+    article:last-of-type  { border-bottom: none; }
+
+    article h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .project-tech {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      margin-top: 10px;
+    }
+
+    .project-tech span { display: inline-block; margin-right: 14px; }
+
+    /* FORM */
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 32px;
+      margin-top: 8px;
+    }
+
+    .form-full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 7px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid var(--rule);
+      border-radius: 0;
+      padding: 8px 0;
+      font-size: 0.95rem;
+      font-family: Georgia, serif;
+      color: #5a5a5a;
+      transition: border-color 0.2s;
+    }
+
+    input::placeholder, textarea::placeholder { color: #b0b0b0; }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-bottom-color: var(--amber);
+    }
+
+    textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+    select { cursor: pointer; }
+
+    button[type="submit"] {
+      background: #5a5a5a;
+      color: var(--paper);
+      border: none;
+      padding: 13px 36px;
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background: var(--amber);
+      outline: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px;
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    footer p {
+      font-family: 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      margin: 0;
+    }
+
+    footer a { color: var(--mid); text-decoration: underline; }
+    footer a:hover { color: var(--amber); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      header { grid-template-columns: 1fr; text-align: center; padding: 48px 20px 36px; }
+      header img { margin: 0 auto; }
+      nav ul { overflow-x: auto; flex-wrap: nowrap; }
+      nav ul li a { padding: 14px 12px; white-space: nowrap; }
+      .wrap { padding: 0 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+      .form-full { grid-column: 1; }
+      footer { flex-direction: column; text-align: center; padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <img src="images/profile.jpg" alt="Photo of Rapeephat Lanthong" />
+    <div class="header-text">
+      <h1>Rapeephat <em>Lanthong</em></h1>
+      <p class="header-meta">674245030 &nbsp;·&nbsp; Computer Science &nbsp;·&nbsp; NPRU &nbsp;·&nbsp; Looking for internship</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="home-intro">
+      <div class="wrap">
+        <p class="section-label">Introduction</p>
+        <h2>I build things for the web.</h2>
+        <p>Third-year CS student at Nakhon Pathom Rajabhat University, with a focus on front-end development and accessible design. I care about writing clean code that actually works for people — not just code that looks good in a demo. Currently looking for a Web Developer internship to put that into practice somewhere real.</p>
+        <figure>
+          <img src="images/campus.jpg" alt="Main building of Nakhon Pathom Rajabhat University surrounded by trees" />
+          <figcaption>NPRU campus, Nakhon Pathom — where I've been studying since 2024.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <p class="section-label">About Me</p>
+        <h2>A bit about who I am.</h2>
+        <h3>Background</h3>
+        <p>I grew up in Nakhon Pathom and got into computers the way most people my age did — breaking things and figuring out how to fix them. I spent a lot of time in secondary school making simple websites for fun, not for any class. That habit stuck, and in 2024 I enrolled in Computer Science at NPRU to make it more than a hobby.</p>
+        <h3>Where I want to go</h3>
+        <p>I want to work on real products with people who take craft seriously. Short term that means an internship where I can contribute something useful and learn how professional teams actually ship software. Longer term I am interested in full-stack development and eventually infrastructure — understanding the whole system, not just the surface.</p>
+        <h3>What I think about</h3>
+        <p>A lot of what I read and experiment with comes back to one question: who gets left out when we build things carelessly? Screen reader users, people on slow connections, people using a phone with a cracked screen — they are all real users. I try to keep that in mind even when nobody is grading me on it.</p>
+        <p>Outside of code I play chess, tinker with Raspberry Pi projects, and occasionally help classmates debug things at midnight before a deadline.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <p class="section-label">Education</p>
+        <h2>Where I have studied.</h2>
+        <table>
+          <caption>Academic history</caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Institution</th>
+              <th scope="col">Qualification</th>
+              <th scope="col">GPA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024–now</td>
+              <td>Nakhon Pathom Rajabhat University</td>
+              <td>B.Sc. Computer Science</td>
+              <td>3.50</td>
+            </tr>
+            <tr>
+              <td>2021–2023</td>
+              <td>Nakhon Pathom Wittayalai School</td>
+              <td>High School — Science &amp; Mathematics</td>
+              <td>3.62</td>
+            </tr>
+            <tr>
+              <td>2015–2020</td>
+              <td>Wat Phra Pathom Chedi School</td>
+              <td>Primary &amp; Lower Secondary</td>
+              <td>3.75</td>
+            </tr>
+            <tr>
+              <td>2025</td>
+              <td>Coursera / Google</td>
+              <td>Google Data Analytics Certificate</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <p class="section-label">Skills</p>
+        <h2>What I work with.</h2>
+        <div class="skills-grid">
+          <div>
+            <p class="skills-col-title">Technical</p>
+            <ul>
+              <li>HTML5 &amp; semantic markup</li>
+              <li>CSS3 — Flexbox, Grid, responsive</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Python &amp; Flask basics</li>
+              <li>SQL &amp; MySQL</li>
+              <li>Git &amp; GitHub</li>
+              <li>PHP — server-side scripting</li>
+              <li>Linux command line</li>
+              <li>Java — OOP, university work</li>
+            </ul>
+          </div>
+          <div>
+            <p class="skills-col-title">General</p>
+            <ol>
+              <li>Written and verbal communication</li>
+              <li>Team collaboration, code review</li>
+              <li>Problem decomposition</li>
+              <li>Managing overlapping deadlines</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <p class="section-label">Projects</p>
+        <h2>Things I have built.</h2>
+
+        <article>
+          <h3>University Event Booking System</h3>
+          <p>Students can register for campus events, check seat availability, and get an email confirmation. Admins get a dashboard to create events, manage listings, and export attendee lists to CSV. Built mostly over one semester as a group project — I handled the registration flow and the email sending.</p>
+          <p class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>PHP</span><span>MySQL</span><span>PHPMailer</span>
+          </p>
+        </article>
+
+        <article>
+          <h3>Personal Finance Tracker</h3>
+          <p>Command-line tool in Python for logging daily income and expenses, categorising transactions, and generating a monthly PDF summary. Persists data in SQLite. I wrote this for myself first because spreadsheets were getting annoying, then added proper unit tests once it actually had users (just me and two friends, but still).</p>
+          <p class="project-tech">
+            <span>Python 3</span><span>SQLite</span><span>ReportLab</span><span>pytest</span>
+          </p>
+        </article>
+
+        <article>
+          <h3>Accessibility Audit Chrome Extension</h3>
+          <p>Scans any page and highlights accessibility problems — missing alt text, broken heading order, low contrast, unlabelled inputs — with short explanations and links to the relevant WCAG guideline. Group project; I wrote the DOM traversal logic and the results panel. We actually used it to audit our own university's website and found a lot of issues.</p>
+          <p class="project-tech">
+            <span>JavaScript (MV3)</span><span>Chrome Extensions API</span><span>HTML5</span><span>CSS3</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="section-label">Contact</p>
+        <h2>Get in touch.</h2>
+        <p>Reach out about internship opportunities, collaborations, or anything else. I check email daily.</p>
+
+        <form action="#" method="post">
+          <div>
+            <label for="full-name">Full name *</label>
+            <input type="text" id="full-name" name="full_name" placeholder="Your name" required aria-required="true" />
+          </div>
+          <div>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+66 81 000 0000" />
+          </div>
+          <div>
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required aria-required="true">
+              <option value="" disabled selected>Select one</option>
+              <option value="internship">Internship opportunity</option>
+              <option value="freelance">Freelance project</option>
+              <option value="collaboration">Academic collaboration</option>
+              <option value="general">General enquiry</option>
+            </select>
+          </div>
+          <div class="form-full">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="What would you like to say?" required aria-required="true"></textarea>
+          </div>
+          <div class="form-full">
+            <button type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Rapeephat Lanthong</p>
+    <p>
+      <a href="mailto:674245030@student.npru.ac.th">674245030@student.npru.ac.th</a>
+      &nbsp;·&nbsp; 7143410 Internet Programming
+    </p>
+  </footer>
+
+</body>
+</html>
