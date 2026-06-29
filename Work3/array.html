@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <h1> Array </h1>
+        <script>
+            let fruit = [
+                {n: "melon", q: 5, p: 100, u: "kg"},
+                {n: "apple", q: 2, p: 20, u: "ea"},
+                {n: "orange", q: 3, p: 10, u: "ea"},
+                {n: "grape", q: 8, p: 50, u: "kg"},
+                {n: "mango", q: 5, p: 50, u: "ea"},
+            ];
+            let total = null;
+
+            document.write("<table border='1'><tr><th> Fruit </th><th> Unit </th><th> Quantity </th><th> Price </th></tr>")
+            for (i=0;i<fruit.length;i++) {
+                let img = `<img src='image/${fruit[i].n}.jpg' width='35'>`
+                document.write(`<tr><td>${img}</td><td>${fruit[i].u}</td><td>${fruit[i].q}</td><td>${fruit[i].p}</td></tr>`)
+            }
+            document.write("</table>")
+
+            for (i=0;i<fruit.length;i++) {
+                total += price[i] * qty[i];
+            }
+
+            document.write("<br> Total : ", total, "$");
+            
+        </script>
+    </body>
+</html>

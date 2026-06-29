@@ -1,0 +1,33 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1> My Students </h1>
+        <script src="script.js"></script>
+        <script>
+            let student = "Bobby Marley";
+            let mid = 50, final = 30;
+            let total = mid + final
+            let grade = null
+
+            if (total >= 80) {
+                grade = "A"
+            } else if (total >= 70) {
+                grade = "B"
+            } else if (total >= 60) {
+                grade = "C"
+            } else if (total >= 50) {
+                grade = "D"
+            } else {
+                grade = "E"
+            }
+
+            document.write("<h4>นักเรียน ", student)
+            document.write("<br>คะเเนนกลางภาค ", mid)
+            document.write("<br>คะเเนนปลายภาค ", final)
+            document.write("<br>คะเเนนรวมทั้งหมด ", total)
+            document.write("<br>เกรด ", grade)
+        </script>
+    </body>
+</html>
