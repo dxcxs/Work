@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <p id="p1">Welcome!</p>
+        <p>Thailand!</p>
+        <p>!</p>
+        <p class="p4">!</p>
+        <p>!</p>
+        <h1>Bye Bye</h1>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnhuN296NWQzc3NucWMzMTA0OHp1cm40amV2d2F2d2lkbXJiNWJxbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LPFNd1AJBoYcVUExmE/giphy.gif">
+        <script>
+            const e1 = document.querySelector("#p1")
+            e1.textContent+="Welcome to Computer Science!"
+            e1.style.color="red"
+
+            const e2 = document.querySelector("h1")
+            e2.textContent="Nah, Good Morning"
+            
+            const e3 = document.querySelectorAll("p")
+            e3.forEach((paragraph) => {
+                paragraph.textContent = "<h2>Hello</h2>"
+                paragraph.style.fontSize = "20px"
+            })
+
+            const e4 = document.querySelector(".p4")
+            e4.innerHTML="<h2>NPRUUUUU</h2>"
+
+            const eImg = document.querySelector("img")
+            eImg.setAttribute("height", "500px")
+            eImg.src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHU3am9lcXZ3bGl5bXJnMzUxbjVnN2JleGpqY2ZobDVrYnAzejBnZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jUwpNzg9IcyrK/giphy.gif"
+            
+            const newH2 = document.createElement("h2")
+            newH2.textContent = "Computer Free @ NPRU"
+            document.body.appendChild(newH2)
+
+            const nahH2 = document.body.appendChild(newH2)
+            nahH2.remove()
+        </script>
+    </body>
+</html>

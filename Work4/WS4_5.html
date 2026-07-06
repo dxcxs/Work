@@ -1,0 +1,24 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>Add Product</h1>
+        <input id="pname" type="text" placeholder="ใส่ชื่อผลิตภัณฑ์">
+        <button>sumbit</button>
+        <ul></ul>
+
+        <script>
+            const input = document.querySelector("input")
+            const ul = document.querySelector("ul")
+
+            document.querySelector("button").addEventListener("click", () => {
+                let li = document.createElement("li")
+
+                li.textContent = input.value
+
+                ul.appendChild(li)
+            })
+        </script> 
+    </body> 
+</html>

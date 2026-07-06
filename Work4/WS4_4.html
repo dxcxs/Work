@@ -1,0 +1,36 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>มหาวิทยาลัยราชภัฏนครปฐม</h1>
+        <input id="score" type="text" placeholder="ใส่คะแนนเพื่อคำนวณเกรด">
+        <button>sumbit</button>
+        <h1 id="grade">Grade: </h1>
+        <script>
+            const score = document.querySelector("#score")
+            const display = document.querySelector("#grade")
+            
+            document.querySelector("button").addEventListener("click", ()  => {
+                let calc = parseInt(score.value)
+                let grade = null
+
+                if (calc >= 80) {
+                    grade = "A";
+                } else if (calc >= 70) {
+                    grade = "B";
+                } else if (calc >= 60) {
+                    grade = "C";
+                } else if (calc >= 50) {
+                    grade = "D";
+                } else {
+                    grade = "F";
+                }
+
+                display.textContent = "Grade: " + grade
+            })
+
+            
+        </script> 
+    </body> 
+</html>

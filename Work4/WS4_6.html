@@ -1,0 +1,29 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h1>Task Mangement System</h1>
+        <input id="task" type="text" placeholder="ใส่ชื่อภารกิจ">
+        <button>Add</button>
+        <ul id="taskList" style="list-style-type:none;"></ul>
+        
+        
+        <script>
+            const input = document.querySelector("input")
+            const ul = document.querySelector("ul")
+
+            document.querySelector("button").addEventListener("click", () => {
+                let li = document.createElement("li")
+                li.innerHTML = `<input type='checkbox'> ${input.value} <button id="X">X</button>`
+                
+                li.querySelector("#X").addEventListener("click", () => {
+                    li.remove()
+                })
+
+                ul.appendChild(li)
+            })
+
+        </script> 
+    </body> 
+</html>
