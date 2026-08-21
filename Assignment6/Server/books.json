@@ -1,0 +1,50 @@
+[
+  {
+    "isbn": "1234567890",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": 1925,
+    "publisher": "Scribner",
+    "status": "available"
+  },
+  {
+    "isbn": "0987654321",
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "publisher": "Secker & Warburg",
+    "status": "borrowed"
+  },
+  {
+    "isbn": "1122334455",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": 1813,
+    "publisher": "T. Egerton",
+    "status": "available"
+  },
+  {
+    "isbn": "5566778899",
+    "title": "The Hobbit",
+    "author": "J. R. R. Tolkien",
+    "year": 1937,
+    "publisher": "George Allen & Unwin",
+    "status": "borrowed"
+  },
+  {
+    "isbn": "6677889900",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year": 1960,
+    "publisher": "J. B. Lippincott & Co.",
+    "status": "available"
+  },
+  {
+    "isbn": "234324234",
+    "title": "Test",
+    "author": "Test",
+    "year": "6767",
+    "publisher": "GGG",
+    "status": "available"
+  }
+]

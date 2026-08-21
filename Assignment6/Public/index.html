@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>📚 รายชื่อหนังสือในห้องสมุด</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>ชื่อหนังสือ</th>
+                    <th>ผู้แต่ง</th>
+                    <th>ปี</th>
+                    <th>สำนักพิมพ์</th>
+                    <th>สถานะ</th>
+                </tr>
+            </thead>
+
+            <tbody id="book-list">
+                <!-- JavaScript จะนำข้อมูลมาใส่ตรงนี้ -->
+            </tbody>
+        </table>
+    </div>
+
+    <form id="book-form" class="book-form">
+
+        <h2>เพิ่มหนังสือ</h2>
+
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn" placeholder="กรอก ISBN" required>
+        </div>
+
+        <div class="form-group">
+            <label for="title">ชื่อหนังสือ</label>
+            <input type="text" id="title" placeholder="กรอกชื่อหนังสือ" required>
+        </div>
+
+        <div class="form-group">
+            <label for="author">ผู้แต่ง</label>
+            <input type="text" id="author" placeholder="กรอกชื่อผู้แต่ง" required>
+        </div>
+
+        <div class="form-group">
+            <label for="year">ปี</label>
+            <input type="number" id="year" placeholder="เช่น 2025" required>
+        </div>
+
+        <div class="form-group">
+            <label for="publisher">สำนักพิมพ์</label>
+            <input type="text" id="publisher" placeholder="กรอกชื่อสำนักพิมพ์" required>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            เพิ่มหนังสือ
+        </button>
+
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
