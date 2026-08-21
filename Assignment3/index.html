@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    // 2. วิเคราะห์คะแนนสอบ
+    let scores = [78, 92, 45, 67, 88, 54, 39, 81, 95, 72];
+
+    document.write("คะแนนทั้งหมด:", scores);
+    document.write("<br>");
+
+    let total = scores.reduce((sum, score) => sum + score, 0);
+    document.write("คะแนนรวม:", total);
+    document.write("<br>");
+
+    let average = total / scores.length;
+    document.write("คะแนนเฉลี่ย:", average);
+    document.write("<br>");
+
+    let passed = scores.filter(score => score >= 50).length;
+    document.write("สอบผ่าน:", passed, "คน");
+    document.write("<br>");
+
+    let failed = scores.filter(score => score < 50).length;
+    document.write("สอบไม่ผ่าน:", failed, "คน");
+    document.write("<br>");
+
+</script>
+
+</body>
+</html>

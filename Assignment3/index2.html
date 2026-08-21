@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    // 3. ร้านกาแฟ
+    let sales = [120, 85, 150, 95, 200, 60, 175];
+
+    let total = 0;
+    let max = sales[0];
+    let min = sales[0];
+    let maxDay = 1;
+    let minDay = 1;
+
+    for (let i = 0; i < sales.length; i++) {
+
+        let status;
+
+        if (sales[i] >= 150) {
+            status = "Excellent";
+        } else if (sales[i] >= 100) {
+            status = "Good";
+        } else {
+            status = "Need Improvement";
+        }
+
+        document.write("Day " + (i + 1) + " : " + sales[i] + " cups - " + status + "<br>");
+
+        total += sales[i];
+
+        if (sales[i] > max) {
+            max = sales[i];
+            maxDay = i + 1;
+        }
+
+        if (sales[i] < min) {
+            min = sales[i];
+            minDay = i + 1;
+        }
+    }
+
+    let average = total / sales.length;
+
+    document.write("<br>");
+    document.write("Total Sales : " + total + " cups<br>");
+    document.write("Average Sales : " + average + " cups/day<br>");
+    document.write("Highest Sales : Day " + maxDay + " - " + max + " cups<br>");
+    document.write("Lowest Sales : Day " + minDay + " - " + min + " cups");
+</script>
+
+</body>
+</html>
