@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cafe</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Cafe</h1>
+
+        <button class="filter" id="all">All</button>
+        <button class="filter" id="drink">Drink</button>
+        <button class="filter" id="bakery">Bakery</button>
+        <script>
+            const filterbtn = document.querySelectorAll(".filter")
+            filterbtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const type = btn.id
+                    const menuItems = document.querySelectorAll(".menu-item")
+
+                    menuItems.forEach(item => {
+                        LoadMenu(type)
+                    })
+                })
+            })
+        </script>
+
+        <p>Welcome</p>
+        <div id="menu"></div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
