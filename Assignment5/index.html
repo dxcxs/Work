@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Create Account</h1>
+
+    <form id="registerForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Your full name" autocomplete="name">
+        <small class="error" id="fullNameError"></small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="you@example.com" autocomplete="email">
+        <small class="error" id="emailError"></small>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="password-wrap">
+          <input type="password" id="password" placeholder="At least 8 characters" autocomplete="new-password">
+          <button type="button" id="togglePassword" aria-label="Show password">👁️</button>
+        </div>
+        <div class="strength">
+          <div class="strength-bar" id="strengthBar"></div>
+        </div>
+        <small class="strength-text" id="strengthText"></small>
+        <small class="error" id="passwordError"></small>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" placeholder="Repeat password" autocomplete="new-password">
+        <small class="error" id="confirmPasswordError"></small>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" placeholder="0812345678" inputmode="numeric" autocomplete="tel">
+        <small class="error" id="phoneError"></small>
+      </div>
+
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+
+    <div id="successMessage" class="success hidden" role="status"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

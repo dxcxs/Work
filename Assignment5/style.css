@@ -1,0 +1,125 @@
+:root {
+  --green: #0b5d3b;
+  --red: #d93025;
+  --yellow: #f4b400;
+  --ok: #1e9e4a;
+  --bg: #f1f5f3;
+  --border: #c9d3ce;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+h1 {
+  margin: 0 0 20px;
+  color: var(--green);
+  text-align: center;
+}
+
+.field { margin-bottom: 16px; }
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+input:focus { border-color: var(--green); }
+input.invalid { border-color: var(--red); }
+input.valid { border-color: var(--ok); }
+
+.error {
+  display: block;
+  min-height: 16px;
+  margin-top: 4px;
+  color: var(--red);
+  font-size: 12px;
+}
+
+.password-wrap { position: relative; }
+.password-wrap input { padding-right: 44px; }
+
+#togglePassword {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.strength {
+  height: 6px;
+  margin-top: 8px;
+  background: #e4e9e6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  width: 0;
+  height: 100%;
+  transition: width .3s, background-color .3s;
+}
+
+.strength-text { font-size: 12px; color: #555; }
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+
+.submit-btn:hover { background: #09482e; }
+.submit-btn:active { transform: scale(.98); }
+
+.success {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #e3f6ea;
+  color: #14693a;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hidden { display: none; }
